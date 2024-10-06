@@ -4,13 +4,13 @@
 
 #define button 4
 
-RF24 radio(9, 10);     // NRF24L01 CSN ve CE pinleri
+RF24 radio(9, 10);     // ce ve csn
 
 
-const byte adres[6] = "ZAzkB";  // İletişim adresi
+const byte adres[6] = "ZAzkB";  // iletişim adresi
 
 void setup() {
-  Serial.begin(115200);  // Seri haberleşme hızını 115200 olarak ayarlıyoruz
+  Serial.begin(115200);  
   radio.begin();
   radio.openWritingPipe(adres);
   radio.setPALevel(RF24_PA_MAX);
@@ -26,6 +26,7 @@ void loop() {
   deger[1] = analogRead(A0);
   deger[2] = analogRead(A1);
   deger[3] = analogRead(A2);
+  
   Serial.print("  dijital okunan buton: ");
   Serial.print("  analog okunan x: ");
   Serial.print("  analog okunan y: ");
