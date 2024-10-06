@@ -14,7 +14,7 @@ const byte adres[6] = "ZAzkB";    // İletişim adresi
   unsigned long first_time = 0;
 
   Servo servomm;        //servo oluştur
-  int servopin = 16;    //18 e bağlanacak
+  int servopin = 16;    //16 e bağlanacak
   unsigned long servo_timer = 0;
 
 void setup() {
@@ -26,10 +26,10 @@ void setup() {
   pinMode(25,OUTPUT);
   pinMode(26,OUTPUT);
   
-  pinMode(led,OUTPUT); //led çıkış olarak atandı
+  pinMode(led,OUTPUT); //led çıkışı
   servomm.attach(servopin); // servo motoru bağlandı
 
-  Serial.begin(115200);  // Seri haberleşme hızını 115200 olarak ayarlıyoruz
+  Serial.begin(115200);  
   radio.begin();
   radio.openReadingPipe(0, adres);
   radio.setPALevel(RF24_PA_MAX);
